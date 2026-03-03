@@ -1,0 +1,21 @@
+params = {
+    'hidden_channels': 256,
+    'out_channels': 1,
+    'num_blocks': 4,
+    'max_num_neighbors': 48,
+    'int_emb_size': 64,
+    'basis_emb_size': 8,
+    'out_emb_channels': 256,
+    'num_spherical': 4,
+    'num_radial': 3,
+    'output_initializer': 'zeros',
+    'cutoff': 5.0,
+    'envelope_exponent': 5,
+    'num_before_skip': 1,
+    'num_after_skip': 2,
+    'num_output_layers': 4,
+    'act': 'swish'
+}
+
+optimizer = torch.optim.AdamW(model.parameters(), lr=0.0008, weight_decay=0.0, amsgrad=True)
+loss_function = nn.MSELoss().to('cuda')
